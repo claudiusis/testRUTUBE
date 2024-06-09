@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="textStyle" parent="TextAppearance.AppCompat">
-        <item name="fontFamily">Roboto</item>
-        <item name="lineHeight">20dp</item>
+    <style name="textStyleMedium" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">@font/roboto_medium</item>
         <item name="maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="textStyleMedium.regular">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="lineHeight">20dp</item>
+    </style>
+
+    <style name="buttonStyle" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">20dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="backgroundTint">@color/purple</item>
     </style>
 
 </resources>

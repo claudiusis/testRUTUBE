@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whiteCustom"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/whiteCustom"
     tools:context=".ui.CitiesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -13,8 +13,7 @@
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <ProgressBar
         android:id="@+id/pogress_bar"
@@ -32,6 +31,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/error_message"
+        style="@style/textStyleMedium"
+        android:textSize="14sp"
+        android:lineHeight="20dp"
+        android:maxLines="2"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,9 +43,11 @@
 
     <Button
         android:id="@+id/reload"
-        android:layout_marginTop="42dp"
+        android:layout_marginBottom="36dp"
         android:text="@string/reload"
         android:visibility="gone"
+        style="@style/buttonStyle"
+        android:layout_marginTop="42dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"

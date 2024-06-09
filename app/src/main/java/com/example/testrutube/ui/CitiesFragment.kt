@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.testrutube.R
 import com.example.testrutube.data.model.Response
 import com.example.testrutube.databinding.FragmentCitiesBinding
-import com.example.testrutube.ui.adapter.CitiesAdapter
+import com.example.testrutube.ui.recycler.CitiesAdapter
+import com.example.testrutube.ui.recycler.StickyLabelDecorator
 import com.example.testrutube.viewModel.CitiesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -52,6 +53,8 @@ class CitiesFragment : Fragment() {
                         cityViewModel.setNewCity(city)
                         findNavController().navigate(R.id.action_citiesFragment_to_weatherFragment)
                     }
+                    val decoration = StickyLabelDecorator(binding.citiesRv.adapter as CitiesAdapter)
+                    binding.citiesRv.addItemDecoration(decoration)
                 }
                 is Response.Error -> {
                     binding.pogressBar.visibility = View.GONE
