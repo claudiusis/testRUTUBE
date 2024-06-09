@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="textStyle" parent="TextAppearance.AppCompat">
+        <item name="fontFamily">Roboto</item>
+        <item name="lineHeight">20dp</item>
+        <item name="maxLines">1</item>
+    </style>
+
+</resources>
