@@ -12,6 +12,7 @@ import com.example.testrutube.R
 import com.example.testrutube.data.model.Response
 import com.example.testrutube.databinding.FragmentCitiesBinding
 import com.example.testrutube.ui.recycler.CitiesAdapter
+import com.example.testrutube.ui.recycler.CustomScrollListener
 import com.example.testrutube.ui.recycler.StickyLabelDecorator
 import com.example.testrutube.viewModel.CitiesViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -55,6 +56,8 @@ class CitiesFragment : Fragment() {
                     }
                     val decoration = StickyLabelDecorator(binding.citiesRv.adapter as CitiesAdapter)
                     binding.citiesRv.addItemDecoration(decoration)
+
+                    binding.citiesRv.addOnScrollListener(CustomScrollListener())
                 }
                 is Response.Error -> {
                     binding.pogressBar.visibility = View.GONE

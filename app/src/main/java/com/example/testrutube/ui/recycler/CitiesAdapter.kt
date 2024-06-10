@@ -58,7 +58,7 @@ class CitiesAdapter(val cities : List<City>, private val clickFunc : (city : Cit
     }
 
     inner class HeaderVH(view: View) : RecyclerView.ViewHolder(view){
-        private val textView : TextView = view.findViewById(R.id.letter)
+        val textView : TextView = view.findViewById(R.id.letter)
         private val cityView : TextView = view.findViewById(R.id.cityName)
 
         fun onBind(city : City){
@@ -68,6 +68,10 @@ class CitiesAdapter(val cities : List<City>, private val clickFunc : (city : Cit
             cityView.setOnClickListener {
                 clickFunc.invoke(city)
             }
+        }
+
+        fun updateVisibility(isVisible: Boolean) {
+            textView.text = if (isVisible) cityView.text[0].toString()  else ""
         }
 
     }

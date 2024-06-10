@@ -1,6 +1,5 @@
 package com.example.testrutube.data.repositury
 
-import android.util.Log
 import com.example.testrutube.data.model.BaseURL
 import com.example.testrutube.data.model.City
 import com.example.testrutube.data.model.CityRepository
@@ -20,7 +19,6 @@ class CityRepositoryImpl @Inject constructor(private val client : HttpClient) : 
                 url(BaseURL.CITIES)
             }.body<String>()
             val cities : List<City> = Json.decodeFromString<List<City>>(result).sortedBy { it.city }.filter { it.city.isNotEmpty() }
-            Log.d("QWERTY", cities.toString())
             Response.Success(
                 cities
             )
